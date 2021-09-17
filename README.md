@@ -10,35 +10,44 @@ The task required us to use exclusively the low level functions "exit, open, clo
 There is a precompiled version included.
 #### Download the software:
 
-Linux:  
+###### Linux:  
+
 	wget file.zip && unzip file.zip && rm file.zip
 
-Windows:  
+###### Windows:  
+
 	download the file using your browser: Click on "Code" and choose "Download Zip" and extract it.
 
 #### Installing build dependencies and build it
 
-Linux:  
+###### Linux:  
+
 	sudo apt install make
 	cd unzipped_file
 	make
 
-Windows:  
+###### Windows:  
+
 	skip this step and use the compiled file
 
 #### run it:
 
-Linux:  
+###### Linux:  
 
 reads from stdin:  
+
 	./tests/grid_generator.perl 60 30 3 | ./realtimeStreamFS  
+
 reads from file(s):  
+
 	./tests/grid_generator.perl 30 15 3 > map1
 	./tests/grid_generator.perl 30 15 3 > map2 
 	./realtimeStreamFS map1 map2
 
-Windows:  
+###### Windows:  
+
 reads from file(s):  
+
 	perl .\tests\grid_generator.perl 30 15 3 > map1
 	perl .\tests\grid_generator.perl 30 15 3 > map2 
 	.\realtimeStreamFS map1 map2
@@ -48,12 +57,14 @@ reads from file(s):
 - grid_generator arguments: <xMax> <yMax> <densityOfObstacles>
 - Run the script in a loop:
 
-Linux:  
+###### Linux:  
+
 	for i in {1..50}; do ./tests/grid_generator.perl 60 30 10 | ./realtimeStreamFS; done
 
 - let the program pass a bunch of tests
 
-Linux:
+###### Linux:
+
 	make check
 
 ##### Screenshots:
