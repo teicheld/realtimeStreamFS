@@ -12,23 +12,24 @@ There is a precompiled version included.
 
 ###### Linux:  
 
-	wget file.zip && unzip file.zip && rm file.zip
+	wget https://github.com/teicheld/realtimeStreamFS/archive/refs/heads/master.zip && unzip master.zip && rm master.zip
 
 ###### Windows:  
 
-	download the file using your browser: Click on "Code" and choose "Download Zip" and extract it.
+	download the file using your browser: Click on "Code" and choose "Download Zip", extract it.
 
 #### Installing build dependencies and build it
 
 ###### Linux:  
 
-	sudo apt install make
-	cd unzipped_file
+	cd realtimeStreamFS-master
+	[ ! -f /usr/bin/make ] && sudo apt install make
 	make
 
 ###### Windows:  
 
-	skip this step and use the compiled file
+	Open the command prompt inside of the directory.
+	Do nothing. Use the precompiled version in the next step.
 
 #### run it:
 
@@ -59,9 +60,9 @@ reads from file(s):
 
 ###### Linux:  
 
-	for i in {1..50}; do ./tests/grid_generator.perl 60 30 10 | ./realtimeStreamFS; done
+- let the program pass a bunch of executions with increasing field-width.
 
-- let the program pass a bunch of tests
+	for i in {1..100}; do echo execution $i; ./tests/grid_generator.perl $i 13 3 | ./realtimeStreamFS; done
 
 ###### Linux:
 
